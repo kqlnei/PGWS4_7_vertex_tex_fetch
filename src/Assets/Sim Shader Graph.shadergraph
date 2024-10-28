@@ -498,7 +498,7 @@
                 "m_Node": {
                     "m_Id": "5b7fbc1f3c9c4e67a5f1525d61f3615d"
                 },
-                "m_SlotId": 0
+                "m_SlotId": 1
             }
         },
         {
@@ -736,7 +736,7 @@
                 "m_Node": {
                     "m_Id": "1930020be9e946c298aca0490eb4f71c"
                 },
-                "m_SlotId": 1
+                "m_SlotId": 0
             }
         },
         {
@@ -876,7 +876,7 @@
                 "m_Node": {
                     "m_Id": "1930020be9e946c298aca0490eb4f71c"
                 },
-                "m_SlotId": 0
+                "m_SlotId": 1
             }
         },
         {
@@ -952,15 +952,15 @@
     ],
     "m_VertexContext": {
         "m_Position": {
-            "x": 0.0,
-            "y": 0.0
+            "x": 109.59992218017578,
+            "y": 183.99990844726563
         },
         "m_Blocks": []
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 0.0,
-            "y": 200.0
+            "x": 109.59992218017578,
+            "y": 383.9999084472656
         },
         "m_Blocks": [
             {
@@ -1444,10 +1444,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -4923.2001953125,
-            "y": -504.7997741699219,
-            "width": 208.00048828125,
-            "height": 301.59991455078127
+            "x": -4923.19921875,
+            "y": -672.7999877929688,
+            "width": 208.0,
+            "height": 301.5999755859375
         }
     },
     "m_Slots": [
@@ -1793,9 +1793,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -4923.2001953125,
-            "y": -856.7998046875,
-            "width": 208.00048828125,
+            "x": -4923.19921875,
+            "y": -1050.4000244140625,
+            "width": 208.0,
             "height": 301.59991455078127
         }
     },
@@ -4568,7 +4568,7 @@
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
     "m_Value": 0.28999999165534975,
-    "m_FloatType": 0,
+    "m_FloatType": 1,
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
@@ -5704,10 +5704,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -5102.400390625,
-            "y": -354.39990234375,
-            "width": 119.20068359375,
-            "height": 148.800048828125
+            "x": -5095.19921875,
+            "y": -354.4000549316406,
+            "width": 119.19921875,
+            "height": 148.8000030517578
         }
     },
     "m_Slots": [
@@ -6237,7 +6237,7 @@
     "m_ShaderOutputName": "A",
     "m_StageCapability": 3,
     "m_Value": {
-        "x": 0.0,
+        "x": 1.0,
         "y": 0.0,
         "z": 0.0,
         "w": 0.0
