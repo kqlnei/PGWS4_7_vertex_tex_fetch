@@ -1,23 +1,50 @@
 using UnityEngine;
-public class RaycastTextureCoordinate : MonoBehaviour
+
+public class SmoothDragObject : MonoBehaviour
 {
+    public GameObject targetObject;   // 移動させたいオブジェクトを指定
+    public float smoothSpeed = 5f;    // オブジェクトの追従速度
+
+    private bool isDragging = false;  // ドラッグ状態を保持するフラグ
+    private Vector3 targetPosition;   // 目標位置を保持する変数
+
     void Update()
     {
-        // マウス左クリックの検出
+        // マウスの左ボタンが押されたらドラッグ開始
         if (Input.GetMouseButtonDown(0))
         {
-            // カメラからクリック位置へのレイを作成
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
 
-            // レイキャストでオブジェクトのコライダーとの交点をチェック
             if (Physics.Raycast(ray, out hit))
             {
-                // テクスチャ座標の取得
-                Vector2 textureCoord = hit.textureCoord;
+                isDragging = true;
+            }
+        }
 
-                // 交点の情報をログに表示
-                Debug.Log("テクスチャ座標: " + textureCoord);
+        // マウスの左ボタンが離されたらドラッグ終了
+        if (Input.GetMouseButtonUp(0))
+        {
+            isDragging = false;
+        }
+
+        // ドラッグ中はオブジェクトをマウスの位置に滑らかに追従させる
+        if (isDragging)
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit))
+            {
+                // マウス位置のxとz座標を目標位置として設定し、y座標はオブジェクトの初期高さを維持
+                targetPosition = new Vector3(hit.point.x, targetObject.transform.position.y, hit.point.z);
+
+                // 補間を使ってオブジェクトを滑らかに目標位置に移動
+                targetObject.transform.position = Vector3.Lerp(
+                    targetObject.transform.position,
+                    targetPosition,
+                    Time.deltaTime * smoothSpeed
+                );
             }
         }
     }
